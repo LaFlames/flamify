@@ -1,8 +1,18 @@
 import * as C from '../../components';
 import * as D from '../../duck';
+import { useGetTopChartsQuery } from '../../redux/services/shazam-core';
 
 const Discover = () => {
-  console.log(D.genres);
+  const { data, isFetching, error } = useGetTopChartsQuery();
+  console.log(data);
+
+  if (isFetching) {
+    return <C.Loader />;
+  }
+
+  if (error) {
+    return <C.Error />;
+  }
 
   return (
     <div className="flex flex-col">
@@ -23,11 +33,13 @@ const Discover = () => {
         </select>
       </div>
 
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {[0, 1, 2, 3, 4, 5, 6, 7].map((song) => (
-          <C.SongCard key={song.key} />
-        ))}
-      </div>
+      {data.length && (
+        <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+          {data.map((song) => (
+            <C.SongCard key={song.key} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
