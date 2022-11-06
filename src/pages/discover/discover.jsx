@@ -1,10 +1,12 @@
+import { useSelector } from 'react-redux';
 import * as C from '../../components';
 import * as D from '../../duck';
 import { useGetTopChartsQuery } from '../../redux/services/shazam-core';
 
 const Discover = () => {
+  const { isPlaying, activeSong } = useSelector((state) => state.player);
+
   const { data, isFetching, error } = useGetTopChartsQuery();
-  console.log(data);
 
   if (isFetching) {
     return <C.Loader />;
@@ -35,8 +37,15 @@ const Discover = () => {
 
       {data.length && (
         <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-          {data.map((song) => (
-            <C.SongCard key={song.key} />
+          {data.map((song, i) => (
+            <C.SongCard
+              key={song.key}
+              song={song}
+              index={i}
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+              data={data}
+            />
           ))}
         </div>
       )}
