@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { playPause, setActiveSong } from '../../redux/features/player-slice';
 import PlayPause from '../play-pause';
 
@@ -40,11 +40,11 @@ const SongCard = ({ song, index, isPlaying, activeSong, data }) => {
       </div>
 
       <div className="mt-4 flex flex-col">
-        <p className="font-semibold text-lg text-white truncate">
-          <NavLink to={`/songs/${song?.key}`}>{song.title}</NavLink>
+        <p className="font-semibold text-lg text-white truncate hover:text-cyan-400">
+          <Link to={`/songs/${song?.key}`}>{song.title}</Link>
         </p>
-        <p className="text-sm text-gray-300 mt-1 truncate">
-          <NavLink
+        <p className="text-sm text-gray-300 mt-1 truncate hover:text-cyan-400">
+          <Link
             to={
               song.artists
                 ? `/artists/${song?.artists[0].adamid}`
@@ -52,7 +52,7 @@ const SongCard = ({ song, index, isPlaying, activeSong, data }) => {
             }
           >
             {song.subtitle}
-          </NavLink>
+          </Link>
         </p>
       </div>
     </div>
