@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { RiCloseLine } from 'react-icons/ri';
-import { logo } from '../../../../assets';
+import { logo, musicLogo } from '../../../../assets';
 import * as D from '../../../../duck';
 
 const NavLinks = ({ handleClick }) => (
@@ -31,6 +31,11 @@ const Sidebar = () => {
     <>
       <div className="md:flex hidden flex-col w-[250px] py-1 px-4 bg-[#191624]">
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+        <img
+          src={musicLogo}
+          alt="logo"
+          className="w-full h-14 object-contain"
+        />
         <NavLinks />
       </div>
 
