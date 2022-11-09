@@ -17,9 +17,9 @@ const TopPlay = () => {
   const divRef = React.useRef(null);
   const topPlays = data?.slice(0, 5);
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     divRef.current.scrollIntoView({ behavior: 'smooth' });
-  });
+  }); */
 
   const handlePause = () => {
     dispatch(playPause(false));
