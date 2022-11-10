@@ -7,6 +7,7 @@ const App = () => (
     <Route path="/" element={<LC.Layout />}>
       <Route index element={<Pages.Discover />} />
       <Route path="/songs/:songId" element={<Pages.SongDetails />} />
+      <Route path="/artists/:id" element={<Pages.ArtistDetails />} />
     </Route>
   </Routes>
 );
