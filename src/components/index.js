@@ -4,3 +4,4 @@ export { default as Layout } from './layout';
 export { default as SongCard } from './song-card';
 export { default as DetailsHeader } from './details-header';
 export { default as RelatedSongs } from './related-songs';
+export { default as ArtistCard } from './artist-card';

@@ -8,6 +8,9 @@ const App = () => (
       <Route index element={<Pages.Discover />} />
       <Route path="/songs/:songId" element={<Pages.SongDetails />} />
       <Route path="/artists/:id" element={<Pages.ArtistDetails />} />
+      <Route path="/around-you" element={<Pages.AroundYou />} />
+      <Route path="/top-charts" element={<Pages.TopCharts />} />
+      <Route path="/top-artists" element={<Pages.TopArtists />} />
     </Route>
   </Routes>
 );
