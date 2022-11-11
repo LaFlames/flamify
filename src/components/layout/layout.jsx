@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import * as LC from './components';
 import MusicPlayer from '../music-player';
 import TopPlay from '../top-play';
+import SearchBar from '../search-bar';
 
 const Layout = () => {
   const { activeSong } = useSelector((state) => state.player);
@@ -12,7 +13,7 @@ const Layout = () => {
     <div className="relative flex">
       <LC.Sidebar />
       <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
-        <div>Search bar</div>
+        <SearchBar />
 
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit pb-40">

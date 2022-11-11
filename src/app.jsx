@@ -11,6 +11,7 @@ const App = () => (
       <Route path="/around-you" element={<Pages.AroundYou />} />
       <Route path="/top-charts" element={<Pages.TopCharts />} />
       <Route path="/top-artists" element={<Pages.TopArtists />} />
+      <Route path="/search/:searchTerm" element={<Pages.Search />} />
     </Route>
   </Routes>
 );
